@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/wsEspochInfoCarrera/wsInfoCarrera?wsdl" uri="wsdl/localhost_8080/wsEspochInfoCarrera/wsInfoCarrera.wsdl"/>
+    <system systemId="http://localhost:8080/wsEspochInfoCarrera/wsInfoCarrera?xsd=1" uri="wsdl/localhost_8080/wsEspochInfoCarrera/wsInfoCarrera.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/wsEspochInfoCarrera/wsInfoCarrera?xsd=2" uri="wsdl/localhost_8080/wsEspochInfoCarrera/wsInfoCarrera.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/wsEspochInfoGeneral/wsInfoGeneral?wsdl" uri="wsdl/localhost_8080/wsEspochInfoGeneral/wsInfoGeneral.wsdl"/>
+    <system systemId="http://localhost:8080/wsEspochInfoGeneral/wsInfoGeneral?xsd=1" uri="wsdl/localhost_8080/wsEspochInfoGeneral/wsInfoGeneral.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/wsEspochInfoGeneral/wsInfoGeneral?xsd=2" uri="wsdl/localhost_8080/wsEspochInfoGeneral/wsInfoGeneral.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/wsEspochSeguridad/wsEspochSeguridad?wsdl" uri="wsdl/localhost_8080/wsEspochSeguridad/wsEspochSeguridad.wsdl"/>
+    <system systemId="http://localhost:8080/wsEspochSeguridad/wsEspochSeguridad?xsd=1" uri="wsdl/localhost_8080/wsEspochSeguridad/wsEspochSeguridad.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/wsEspochSeguridad/wsEspochSeguridad?xsd=2" uri="wsdl/localhost_8080/wsEspochSeguridad/wsEspochSeguridad.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/WSUnidos/WSBDatosAnalitico?wsdl" uri="wsdl/localhost_8080/WSUnidos/WSBDatosAnalitico.wsdl"/>
+    <system systemId="http://localhost:8080/WSUnidos/WSBDatosAnalitico?xsd=1" uri="wsdl/localhost_8080/WSUnidos/WSBDatosAnalitico.xsd_1.xsd"/>
+</catalog>
