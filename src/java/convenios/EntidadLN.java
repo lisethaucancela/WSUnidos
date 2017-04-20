@@ -7,7 +7,6 @@ package convenios;
 
 import com.google.gson.Gson;
 import cvcc.practicas.ad.conexion.AccesoDatos;
-import java.util.List;
 
 /**
  *
@@ -15,17 +14,18 @@ import java.util.List;
  */
 public class EntidadLN {
 
-    public Entidad loadConvenios(int idEntidad) {
+    public Entidad loadConvenios(String codigo) {
         EntidadAD entidadAD = new EntidadAD();
+        String result = "{}";
         try {
             AccesoDatos accesoDatos = new AccesoDatos();
             if (accesoDatos.Connectar() == 2) {
 
-                entidadAD.setIdEntidad(idEntidad);
+                entidadAD.setCodigo(codigo);
                 entidadAD.obtenerListaConvenios(accesoDatos);
                 Gson gson = new Gson();
-               // String result = gson.toJson(entidadAD);
-               
+                //result = gson.toJson(entidadAD);
+
             }
 
         } catch (Exception exConec) {

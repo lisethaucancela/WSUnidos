@@ -19,6 +19,7 @@ public class Entidad {
     private Entidad ObjPadre;
     private String Descripcion;
     private List<Convenio> ListConvenios;
+    private String Codigo;
 
     public Entidad() {
     }
@@ -72,6 +73,14 @@ public class Entidad {
         this.Descripcion = Descripcion;
     }
 
+    public String getCodigo() {
+        return Codigo;
+    }
+
+    public void setCodigo(String Codigo) {
+        this.Codigo = Codigo;
+    }
+    
     public void addConvenios(Convenio OP) {
         try {
             if (this.ListConvenios == null) {

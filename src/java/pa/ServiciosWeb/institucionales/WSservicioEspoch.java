@@ -5,10 +5,10 @@
  */
 package pa.ServiciosWeb.institucionales;
 
-import convenios.Convenio;
 import convenios.Entidad;
 import convenios.EntidadLN;
 import ec.edu.espoch.academico.ArrayOfDictadoMateria;
+import ec.edu.espoch.academico.ArrayOfEscuela;
 import ec.edu.espoch.academico.ArrayOfFacultad;
 import ec.edu.espoch.academico.ArrayOfMateriaPensum;
 import ec.edu.espoch.academico.ArrayOfPeriodo;
@@ -51,8 +51,8 @@ public class WSservicioEspoch {
     public Persona DatosUsuarioCarrera(@WebParam(name = "strCodCarrera") String strCodCarrera, @WebParam(name = "strCedula") String strCedula) {
         return serviciosEspoch.getDatosUsuarioCarrera(strCodCarrera, strCedula);
     }
-    
-     @WebMethod(operationName = "FacultadesTotales")
+
+    @WebMethod(operationName = "FacultadesTotales")
     public ArrayOfFacultad FacultadesTotales() {
         return serviciosEspoch.getFacultadesTotales();
     }
@@ -62,11 +62,19 @@ public class WSservicioEspoch {
         return serviciosEspoch.getPeriodosAcademicos();
     }
 
+    @WebMethod(operationName = "TodasEscuelas")
+    public ArrayOfEscuela TodasEscuelas() {
+        return serviciosEspoch.getTodasEscuelas();
+    }
+    /* *******************************************************
+     SERVICIOS WEB VINCULACION
+     ********************************************************  */
+
     @WebMethod(operationName = "Convenios")
-    public Entidad Convenios(@WebParam(name = "idEntidad") int idEntidad) {
+    public Entidad Convenios(@WebParam(name = "codigo_unidad_academica") String codigo_unidad_academica) {
         Entidad result;
         EntidadLN entidadln = new EntidadLN();
-        result = entidadln.loadConvenios(idEntidad);
+        result = entidadln.loadConvenios(codigo_unidad_academica);
         return result;
     }
 
