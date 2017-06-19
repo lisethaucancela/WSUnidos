@@ -5,10 +5,7 @@
  */
 package pa.ServiciosWeb.institucionales;
 
-import convenios.Entidad;
-import convenios.EntidadLN;
 import ec.edu.espoch.academico.ArrayOfDictadoMateria;
-import ec.edu.espoch.academico.ArrayOfEscuela;
 import ec.edu.espoch.academico.ArrayOfFacultad;
 import ec.edu.espoch.academico.ArrayOfMateriaPensum;
 import ec.edu.espoch.academico.ArrayOfPeriodo;
@@ -16,9 +13,6 @@ import ec.edu.espoch.academico.Persona;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-import javax.xml.ws.WebServiceRef;
-import misserviciosinfocarrera.WsInfoCarrera_Service;
-import misserviciosinfogeneral.WsInfoGeneral_Service;
 
 /**
  *
@@ -27,15 +21,14 @@ import misserviciosinfogeneral.WsInfoGeneral_Service;
 @WebService(serviceName = "WSservicioEspoch")
 public class WSservicioEspoch {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/wsEspochInfoGeneral/wsInfoGeneral.wsdl")
-    private WsInfoGeneral_Service service_1;
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/wsEspochInfoCarrera/wsInfoCarrera.wsdl")
-    private WsInfoCarrera_Service service;
-
     /**
      * This is a sample web service operation
      */
+    @WebMethod(operationName = "hello")
+    public String hello(@WebParam(name = "name") String txt) {
+        return "Hello " + txt + " !";
+    }
+
     @WebMethod(operationName = "MallaCurricularPensumVigenteSinDescripcion")
     public ArrayOfMateriaPensum MallaCurricularPensumVigenteSinDescripcion(@WebParam(name = "strCodCarrera") String strCodCarrera) {
         return serviciosEspoch.getMallaCurricularPensumVigenteSinDescripcion(strCodCarrera);
@@ -52,6 +45,13 @@ public class WSservicioEspoch {
         return serviciosEspoch.getDatosUsuarioCarrera(strCodCarrera, strCedula);
     }
 
+    @WebMethod(operationName = "PeriodosAcademicos")
+    public ArrayOfPeriodo PeriodosAcademicos() {
+        return serviciosEspoch.getPeriodosAcademicos();
+    }
+//---SERVICIOS WEB
+
+    //servicios
     @WebMethod(operationName = "FacultadesTotales")
     public ArrayOfFacultad FacultadesTotales() {
         return serviciosEspoch.getFacultadesTotales();
@@ -61,21 +61,6 @@ public class WSservicioEspoch {
     public ArrayOfPeriodo DatosPeriodo() {
         return serviciosEspoch.getPeriodosAcademicos();
     }
-
-    @WebMethod(operationName = "TodasEscuelas")
-    public ArrayOfEscuela TodasEscuelas() {
-        return serviciosEspoch.getTodasEscuelas();
-    }
-    /* *******************************************************
-     SERVICIOS WEB VINCULACION
-     ********************************************************  */
-
-    @WebMethod(operationName = "Convenios")
-    public Entidad Convenios(@WebParam(name = "codigo_unidad_academica") String codigo_unidad_academica) {
-        Entidad result;
-        EntidadLN entidadln = new EntidadLN();
-        result = entidadln.loadConvenios(codigo_unidad_academica);
-        return result;
-    }
-
+    
+   
 }

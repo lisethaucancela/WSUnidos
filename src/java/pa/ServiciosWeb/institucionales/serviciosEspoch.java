@@ -49,7 +49,6 @@ import ec.edu.espoch.academico.Matricula;
 import ec.edu.espoch.academico.ParamCarrera;
 import ec.edu.espoch.academico.Periodo;
 import ec.edu.espoch.academico.Persona;
-import javax.xml.ws.Holder;
 
 public class serviciosEspoch {
 
@@ -373,12 +372,6 @@ public class serviciosEspoch {
         return port.getEscuelaEntidad();
     }
 
-    public static ArrayOfFacultad getFacultadesTotales() {
-        misserviciosinfogeneral.WsInfoGeneral_Service service = new misserviciosinfogeneral.WsInfoGeneral_Service();
-        misserviciosinfogeneral.WsInfoGeneral port = service.getWsInfoGeneralPort();
-        return port.getFacultadesTotales();
-    }
-
     public static ArrayOfInstitucionEstudiante getInstitucionEstudiante(java.lang.String strcedula) {
         misserviciosinfogeneral.WsInfoGeneral_Service service = new misserviciosinfogeneral.WsInfoGeneral_Service();
         misserviciosinfogeneral.WsInfoGeneral port = service.getWsInfoGeneralPort();
@@ -402,7 +395,7 @@ public class serviciosEspoch {
         misserviciosinfogeneral.WsInfoGeneral port = service.getWsInfoGeneralPort();
         return port.getPeriodosAcademicos();
     }
-      
+
     public static ArrayOfProvincia getProvincias() {
         misserviciosinfogeneral.WsInfoGeneral_Service service = new misserviciosinfogeneral.WsInfoGeneral_Service();
         misserviciosinfogeneral.WsInfoGeneral port = service.getWsInfoGeneralPort();
@@ -465,4 +458,11 @@ public class serviciosEspoch {
         misserviciosespochseguridad.WsEspochSeguridad port = service.getWsEspochSeguridadPort();
         return port.getUsuarioFacultad(login, password);
     }
+
+    public static ArrayOfFacultad getFacultadesTotales() {
+        misserviciosinfogeneral.WsInfoGeneral_Service service = new misserviciosinfogeneral.WsInfoGeneral_Service();
+        misserviciosinfogeneral.WsInfoGeneral port = service.getWsInfoGeneralPort();
+        return port.getFacultadesTotales();
+    }
+
 }

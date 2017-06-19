@@ -7,8 +7,8 @@
     <service name="WSservicioEspoch">
       <implementation-class>pa.ServiciosWeb.institucionales.WSservicioEspoch</implementation-class>
     </service>
-    <service name="proyectosInvestigacion">
-      <implementation-class>proyectoInvestigacion.proyectosInvestigacion</implementation-class>
+    <service name="WSProyectosInvestigacion">
+      <implementation-class>proyectoInvestigacion.WSProyectosInvestigacion</implementation-class>
     </service>
   </services>
   <clients>

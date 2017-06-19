@@ -3,26 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoInvestigacion;
+package pa.ServiciosWeb.institucionales;
 
-import java.util.List;
+import ec.edu.espoch.academico.ArrayOfFacultad;
 
 /**
  *
  * @author Paola_Cajilema
  */
-public class NewMain {
+public class test {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ProyectosLN obj = new ProyectosLN();
-        // swCProyectoss strProyectos = obj.loadListaProyectos("FIE");
-        List<swCInstitucionEjecutora> strProyectos = obj.loadListaInstitucionesEjecutorasPorProyecto(1);
-//        System.out.println(strProyectos);
-
         // TODO code application logic here
-    }
+        ArrayOfFacultad objFacu = serviciosEspoch.getFacultadesTotales();
+        for (int i = 0; i < objFacu.getFacultad().size(); i++) {
+            System.out.println(objFacu.getFacultad().get(i).getNombre());
+        }
 
+    }
 }
